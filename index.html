@@ -161,6 +161,7 @@
   .facts dt{font-family:var(--mono); font-size:11.5px; color:var(--ink-dim); text-transform:lowercase; margin-top:16px;}
   .facts dt:first-child{margin-top:0;}
   .facts dd{margin:2px 0 0; font-size:15px; font-weight:600; color:var(--ink);}
+  .facts dd a{text-decoration:none; border-bottom:1.5px solid var(--black);}
 
   .skills-section{border-bottom:2px solid var(--black);}
   .skills-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:40px; align-items:start;}
@@ -235,6 +236,10 @@
         <span class="pill">🕒 UTC+5:30</span>
         <span class="pill">🎓 CSE · CMRCET</span>
       </div>
+      <div class="hero-cta">
+        <a class="btn btn-solid" href="https://www.linkedin.com/in/kavya-bhargavi-vanguru-8213b4427/" target="_blank" rel="noopener">linkedin</a>
+        <a class="btn btn-ghost" href="https://github.com/kvyavanguru" target="_blank" rel="noopener">github</a>
+      </div>
     </div>
     <div class="photo-col">
       <div class="photo-frame">
@@ -273,6 +278,10 @@
         <dd>CMRCET</dd>
         <dt>languages</dt>
         <dd>C++, C, Python, Java</dd>
+        <dt>linkedin</dt>
+        <dd><a href="https://www.linkedin.com/in/kavya-bhargavi-vanguru-8213b4427/" target="_blank" rel="noopener">kavya-bhargavi-vanguru</a></dd>
+        <dt>github</dt>
+        <dd><a href="https://github.com/kvyavanguru" target="_blank" rel="noopener">kvyavanguru</a></dd>
       </dl>
     </div>
   </div>
@@ -321,7 +330,7 @@
         </div>
       </div>
     </div>
-    <p class="hint">try: help · whoami · ls · cat about.txt · skills · sudo make coffee · clear</p>
+    <p class="hint">try: help · whoami · ls · cat about.txt · skills · contact · sudo make coffee · clear</p>
   </div>
 </section>
 
@@ -334,7 +343,10 @@
       </div>
       <p class="lede">Open to collaborations and anything that involves building and learning alongside other students.</p>
     </div>
-    <div class="contact-note">note: no LinkedIn or GitHub link was provided yet — send them over and I'll add working buttons here.</div>
+    <div class="contact-links">
+      <a href="https://www.linkedin.com/in/kavya-bhargavi-vanguru-8213b4427/" target="_blank" rel="noopener">linkedin.com/in/kavya-bhargavi-vanguru</a>
+      <a href="https://github.com/kvyavanguru" target="_blank" rel="noopener">github.com/kvyavanguru</a>
+    </div>
   </div>
 </section>
 
@@ -360,10 +372,11 @@ const files = {
 };
 
 const commands = {
-  help: () => `available: <strong>whoami</strong>, <strong>ls</strong>, <strong>cat &lt;file&gt;</strong>, <strong>skills</strong>, <strong>sudo make coffee</strong>, <strong>clear</strong>`,
+  help: () => `available: <strong>whoami</strong>, <strong>ls</strong>, <strong>cat &lt;file&gt;</strong>, <strong>skills</strong>, <strong>contact</strong>, <strong>sudo make coffee</strong>, <strong>clear</strong>`,
   whoami: () => `kavya bhargavi vanguru — CSE student, CMRCET`,
   ls: () => Object.keys(files).join('   '),
   skills: () => `C++, C, Python, Java — plus Linux/shell`,
+  contact: () => `linkedin: linkedin.com/in/kavya-bhargavi-vanguru-8213b4427<br>github: github.com/kvyavanguru`,
   clear: () => { log.innerHTML=''; return null; },
   sudo: (rest) => {
     if(rest.trim() === 'make coffee') return `sudo: brewing... <strong>done.</strong> ☕`;
